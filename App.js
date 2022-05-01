@@ -39,6 +39,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
+      <StatusBar BackgroundColor="black" />
       <PageStack.Navigator>
         <PageStack.Screen name="HomeTabs" component={HomeTabs} options={{headerShown: false }}/>
         <PageStack.Screen name="Activity" component={Activity} />
