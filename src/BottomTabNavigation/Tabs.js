@@ -27,17 +27,17 @@ const SearchStackScreen = () => {
 const Tabs = () => {
     return (
         <BTab.Navigator
-            tabBarOptions ={{
-                showLabel: false,
-                style: {
-                    display: 'flex',
-                    position: 'absolute',
-                    button: 27,
-                    elevation: 0,
-                    background: '#fff',
-
-                    height: 80,
-                }
+        screenOptions ={{ //previous code was tabBarOptions
+                "tabBarShowLabel": false,
+                "tabBarStyle":[ 
+                    {
+                        display: 'flex',
+                        position: 'absolute',
+                        button: 27,
+                        elevation: 0,
+                        background: '#fff',
+                        height: 60,
+                    }]
             }}
         >
             <BTab.Screen name="Home" component={HomeScreen} options={({navigation}) => ({
