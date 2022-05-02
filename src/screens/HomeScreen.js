@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StatusBar } from 'react-native';
 import { Icon } from "react-native-elements";
 import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
 import Feed from '../Components/Feed';
 import StoriesList from '../Components/StoriesList';
-import { db } from '../../firebaseConfig';
-import { collection, getDocs } from 'firebase/firestore';
+// import { db } from '../../firebaseConfig';
+// import { collection, getDocs } from 'firebase/firestore';
+
+
 
 const HomeScreen = () => {
     const storyImageArray = {
@@ -13,10 +15,11 @@ const HomeScreen = () => {
         // imageLink1 : require('../../assets/story.jpg')
     }
 
+    
     const [posts, setPosts] = useState([]);
 
     // This is how to create reference to a collection in firebase v9
-    postsCollectionsRef = collection(db, 'posts');
+    // postsCollectionsRef = collection(db, 'posts');
     
 
     return (
@@ -30,7 +33,7 @@ const HomeScreen = () => {
 
                 {/* This view shows the posts */}
                 <Feed/>
-                
+                <Feed/>
                 
             
             </ScrollView>

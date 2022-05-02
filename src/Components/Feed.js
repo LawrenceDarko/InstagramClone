@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Icon } from "react-native-elements";
 import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
 
 
 const Feed = ({post}) => {
     
+    const [hasliked, setHasliked] = useState(false);
+    const [likes, setLikes] = useState(0);
+
+    // console.log(likes);
+
   return (
     <View style={styles.container}>
         <View style={styles.feed}>
                 {/* This view shows the post profile */}
                 <View style={styles.profile}>
-                    <Icon
+                   <Text> <Icon
                                     name="user-circle-o"
                                     type="font-awesome"
-                                    color=  '#000'
+                                    color= "#000"
                                     //width='100%'
                                     //color={toggleColors(focused)}
                                 />
+                    </Text>
                     <Icon
                                     name="ellipsis-h"
                                     type="font-awesome-5"
@@ -33,13 +39,16 @@ const Feed = ({post}) => {
                 {/* This view shows th social buttons and save icon */}
                 <View style={styles.social}>
                     <View style={styles.socialbuttons}>
-                        <Icon
-                                    name="heart"
+                        <TouchableOpacity onPress={()=>{setHasliked(!hasliked); !hasliked ? setLikes(likes+1): setLikes(likes-1)}}><Icon
+                                    name={hasliked? 'heartbeat':'heart'}
                                     type="font-awesome-5"
-                                    color=  '#000'
+                                    color=  {hasliked? 'red':'#000'}
                                     //width='100%'
                                     //color={toggleColors(focused)}
                                 />
+                                
+                        </TouchableOpacity>
+                        
                         <Icon
                                 name="comment-o"
                                 type="font-awesome"
@@ -68,6 +77,7 @@ const Feed = ({post}) => {
 
                 </View>
                 <View style={styles.feedtext}>
+                    {likes>0 ? <Text style={{fontWeight: 'bold'}}>{likes} likes</Text> : null}
                     <Text style={styles.feedtexttitle}><Text style={{fontWeight: 'bold'}}>ampem_dev</Text> This is the descripton</Text>
                     <Text style={{paddingTop: 10}}>View all 42 comments</Text>
                 </View>
@@ -112,7 +122,7 @@ const styles = StyleSheet.create({
         // borderColor: 'blue'
     },
     social: {
-        height: 50,
+        height: 40,
         // borderWidth: 2,
         // borderColor: 'green',
         display: 'flex',
@@ -123,10 +133,12 @@ const styles = StyleSheet.create({
     socialbuttons: {
         display: 'flex',
         width: 150,
+        height: 40,
         flexDirection: 'row',
         // borderWidth: 2,
         justifyContent: 'space-evenly',
-        paddingTop: 10
+        paddingTop: 10,
+        // paddingLeft: 10,
     },
     saveicon: {
         display: 'flex',
