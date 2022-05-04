@@ -27,7 +27,8 @@ const Feed = ({post}) => {
                                     name="ellipsis-h"
                                     type="font-awesome-5"
                                     color=  '#000'
-                                    //width='100%'
+                                    // size={20}
+
                                     //color={toggleColors(focused)}
                                 />
 
