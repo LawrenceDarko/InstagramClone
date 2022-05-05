@@ -16,7 +16,7 @@ const SearchStack = createStackNavigator();
 const SearchStackScreen = () => {
     return (
       <SearchStack.Navigator>
-        <SearchStack.Screen name="SearchScreen" component={SearchScreen} />
+        <SearchStack.Screen name="SearchScreen" component={SearchScreen} options={{headerShown: false }} />
         <SearchStack.Screen name="ExploreScreen" component={ExploreScreen} />
       </SearchStack.Navigator>
     )
@@ -84,8 +84,8 @@ const Tabs = () => {
                 tabBarIcon: ({focused}) => (
                     <View>
                         <Icon
-                            name="search"
-                            type="font-awesome-5"
+                            name="search-outline"
+                            type="ionicon"
                             color= {focused ? '#000' : '#000'}
                             //width='100%'
                             //color={toggleColors(focused)}
@@ -127,8 +127,8 @@ const Tabs = () => {
                 tabBarIcon: ({focused}) => (
                     <View>
                         <Icon
-                            name="user-circle"
-                            type="font-awesome-5"
+                            name="person-circle-outline"
+                            type="ionicon"
                             color= {focused ? '#000' : '#000'}
                             //width='100%'
                             //color={toggleColors(focused)}

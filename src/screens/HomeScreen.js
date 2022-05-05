@@ -4,8 +4,8 @@ import { Icon } from "react-native-elements";
 import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
 import Feed from '../Components/Feed';
 import StoriesList from '../Components/StoriesList';
-// import { db } from '../../firebaseConfig';
-// import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase-config';
+import { collection, getDocs } from 'firebase/firestore';
 
 
 
@@ -28,6 +28,12 @@ const HomeScreen = () => {
                 <StatusBar hidden={false} />
                 {/* This view shows the stories */}
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.stories}>
+                    <StoriesList imageLink={storyImageArray} />
+                    <StoriesList imageLink={storyImageArray} />
+                    <StoriesList imageLink={storyImageArray} />
+                    <StoriesList imageLink={storyImageArray} />
+                    <StoriesList imageLink={storyImageArray} />
+                    <StoriesList imageLink={storyImageArray} />
                     <StoriesList imageLink={storyImageArray} />
                 </ScrollView>
 

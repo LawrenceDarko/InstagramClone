@@ -16,16 +16,16 @@ const Feed = ({post}) => {
                 {/* This view shows the post profile */}
                 <View style={styles.profile}>
                    <Text> <Icon
-                                    name="user-circle-o"
-                                    type="font-awesome"
+                                    name="person-circle-outline"
+                                    type="ionicon"
                                     color= "#000"
                                     //width='100%'
                                     //color={toggleColors(focused)}
                                 />
                     </Text>
                     <Icon
-                                    name="ellipsis-h"
-                                    type="font-awesome-5"
+                                    name="ellipsis-horizontal"
+                                    type="ionicon"
                                     color=  '#000'
                                     // size={20}
 
@@ -41,25 +41,25 @@ const Feed = ({post}) => {
                 <View style={styles.social}>
                     <View style={styles.socialbuttons}>
                         <TouchableOpacity onPress={()=>{setHasliked(!hasliked); !hasliked ? setLikes(likes+1): setLikes(likes-1)}}><Icon
-                                    name={hasliked? 'heartbeat':'heart'}
-                                    type="font-awesome-5"
+                                    name={hasliked? 'heart':'heart-outline'}
+                                    type="ionicon"
                                     color=  {hasliked? 'red':'#000'}
-                                    //width='100%'
+                                    size={26}
                                     //color={toggleColors(focused)}
                                 />
                                 
                         </TouchableOpacity>
                         
                         <Icon
-                                name="comment-o"
-                                type="font-awesome"
+                                name="chatbubble-outline"
+                                type="ionicon"
                                 color='#000'
                                 //width='100%'
                                 //color={toggleColors(focused)}
                         />
                         <Icon
-                                name="paper-plane-o"
-                                type="font-awesome"
+                                name="paper-plane-outline"
+                                type="ionicon"
                                 color='#000'
                                 //width='100%'
                                 //color={toggleColors(focused)}

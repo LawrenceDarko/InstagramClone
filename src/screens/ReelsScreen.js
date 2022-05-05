@@ -2,25 +2,16 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { Icon } from "react-native-elements";
-// import Video from 'react-native-video';
-// import { Video } from 'expo-av';
+// import { Video } from 'expo-av'
+// import VideoPlayer from 'expo-video-player'
+
+// https://youtu.be/C2vXw06XY2E
 
 const ReelsScreen = () => {
     return (
         <View>
-            {/* <View>
-                <Video
-                source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
-                rate={1.0}
-                volume={1.0}
-                isMuted={false}
-                resizeMode="cover"
-                shouldPlay
-                isLooping
-                style={{ width: 300, height: 300 }}
-                /> 
-           </View> */}
-            <ImageBackground style={{width: '100%'}} resizeMode="cover" source={require('../../assets/stories.png')}>
+            
+            <ImageBackground style={{width: '100%', height: '100%'}} resizeMode="cover" source={require('../../assets/stories.jpeg')}>
             {/* <StatusBar hidden={true} /> */}
             {/* <StatusBar  backgroundColor={'#ffffff00'} /> */}
             <View style={styles.screentitle}>
@@ -74,7 +65,7 @@ const ReelsScreen = () => {
                                     name="square-outline"
                                     type="ionicon"
                                     color= "#fff"
-                                    //width='100%'
+                                    // iconStyle={{paddingBottom: 10}}
                                     //color={toggleColors(focused)}
                                 />
             </View>
@@ -96,6 +87,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 250,
         marginLeft: 270,
+        paddingBottom: 10
     },
 
     screentitle: {
